@@ -44,7 +44,7 @@ nacos/
 ├── logs
 ├── NOTICE
 ├── plugins
-│   └── nacos-datasource-plugin-ext-2.2.4.jar
+│   └── nacos-datasource-plugin-ext-2.3.0.jar
 ├── target
 │   └── nacos-server.jar
 └── work
