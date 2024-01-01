@@ -1,3 +1,23 @@
+/*
+ * Copyright 1999-2022 Bulain.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info   */
+/******************************************/
 CREATE TABLE config_info (
   id bigint NOT NULL identity,
   data_id nvarchar(255) NOT NULL,
@@ -24,6 +44,10 @@ CREATE INDEX idx_configinfo_1 ON config_info(data_id);
 CREATE INDEX idx_configinfo_2 ON config_info(group_id);
 CREATE INDEX idx_configinfo_3 ON config_info(data_id, group_id);
 
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = his_config_info   */
+/******************************************/
 CREATE TABLE his_config_info (
   id bigint NOT NULL,
   nid bigint NOT NULL identity,
@@ -46,7 +70,10 @@ CREATE INDEX idx_hisconfiginfo_1 ON his_config_info(data_id);
 CREATE INDEX idx_hisconfiginfo_2 ON his_config_info(gmt_create);
 CREATE INDEX idx_hisconfiginfo_3 ON his_config_info(gmt_modified);
 
-
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info_beta   */
+/******************************************/
 CREATE TABLE config_info_beta (
   id bigint NOT NULL identity,
   data_id nvarchar(255) NOT NULL,
@@ -65,6 +92,10 @@ CREATE TABLE config_info_beta (
   constraint uk_configinfobeta_1 UNIQUE (data_id,group_id,tenant_id)
 );
 
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info_tag   */
+/******************************************/
 CREATE TABLE config_info_tag (
   id bigint NOT NULL identity,
   data_id nvarchar(255) NOT NULL,
@@ -82,6 +113,10 @@ CREATE TABLE config_info_tag (
   constraint uk_configinfotag_1 UNIQUE (data_id,group_id,tenant_id,tag_id)
 );
 
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info_aggr   */
+/******************************************/
 CREATE TABLE config_info_aggr (
   id bigint NOT NULL identity,
   data_id nvarchar(255) NOT NULL,
@@ -95,37 +130,10 @@ CREATE TABLE config_info_aggr (
   constraint uk_configinfoaggr_1 UNIQUE (data_id,group_id,tenant_id,datum_id)
 );
 
-CREATE TABLE app_list (
- id bigint NOT NULL identity,
- app_name nvarchar(128) NOT NULL,
- is_dynamic_collect_disabled smallint DEFAULT 0,
- last_sub_info_collected_time datetime DEFAULT '1970-01-01 08:00:00.0',
- sub_info_lock_owner varchar(128),
- sub_info_lock_time datetime DEFAULT '1970-01-01 08:00:00.0',
- constraint pk_applist_1 PRIMARY KEY (id),
- constraint uk_applist_1 UNIQUE (app_name)
-);
-
-CREATE TABLE app_configdata_relation_subs (
-  id bigint NOT NULL identity,
-  app_name nvarchar(128) NOT NULL,
-  data_id varchar(255) NOT NULL,
-  group_id varchar(128) NOT NULL,
-  gmt_modified datetime DEFAULT '2010-05-05 00:00:00',
-  constraint pk_configdatarelationsubs_1 PRIMARY KEY (id),
-  constraint uk_configdatarelationsubs_1 UNIQUE (app_name, data_id, group_id)
-);
-
-CREATE TABLE app_configdata_relation_pubs (
-  id bigint NOT NULL identity,
-  app_name nvarchar(128) NOT NULL,
-  data_id varchar(255) NOT NULL,
-  group_id varchar(128) NOT NULL,
-  gmt_modified datetime DEFAULT '2010-05-05 00:00:00',
-  constraint pk_configdatarelationpubs_1 PRIMARY KEY (id),
-  constraint uk_configdatarelationpubs_1 UNIQUE (app_name, data_id, group_id)
-);
-
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_tags_relation   */
+/******************************************/
 CREATE TABLE config_tags_relation (
   id bigint NOT NULL,
   tag_name nvarchar(128) NOT NULL,
@@ -137,9 +145,12 @@ CREATE TABLE config_tags_relation (
   constraint pk_configtagrelation_1 PRIMARY KEY (nid),
   constraint uk_configtagrelation_1 UNIQUE (id, tag_name, tag_type)
 );
-
 CREATE INDEX idx_configtagsrelation_1 ON config_tags_relation(tenant_id);
 
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = group_capacity   */
+/******************************************/
 CREATE TABLE group_capacity (
   id bigint NOT NULL identity,
   group_id varchar(128) DEFAULT '',
@@ -155,6 +166,10 @@ CREATE TABLE group_capacity (
   constraint uk_groupcapacity_1 UNIQUE (group_id)
 );
 
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = tenant_capacity   */
+/******************************************/
 CREATE TABLE tenant_capacity (
   id bigint NOT NULL identity,
   tenant_id varchar(128) DEFAULT '',
