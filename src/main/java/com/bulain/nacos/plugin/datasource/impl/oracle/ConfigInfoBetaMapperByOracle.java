@@ -1,5 +1,5 @@
 /*
- * Copyright 1999-2022 Alibaba Group Holding Ltd.
+ * Copyright 1999-2022 Bulain.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,11 @@ package com.bulain.nacos.plugin.datasource.impl.oracle;
 import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoBetaMapper;
+import com.alibaba.nacos.plugin.datasource.model.MapperContext;
+import com.alibaba.nacos.plugin.datasource.model.MapperResult;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The oracle implementation of ConfigInfoBetaMapper.
@@ -29,10 +34,19 @@ import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoBetaMapper;
 public class ConfigInfoBetaMapperByOracle extends AbstractMapper implements ConfigInfoBetaMapper {
 
     @Override
-    public String findAllConfigInfoBetaForDumpAllFetchRows(int startRow, int pageSize) {
-        return "SELECT t.id,data_id,group_id,tenant_id,app_name,content,md5,gmt_modified,beta_ips "
+    public MapperResult findAllConfigInfoBetaForDumpAllFetchRows(MapperContext context) {
+        Integer startRow = context.getStartRow();
+        int pageSize = context.getPageSize();
+        
+        String sql = "SELECT t.id,data_id,group_id,tenant_id,app_name,content,md5,gmt_modified,beta_ips "
                 + " FROM (  SELECT id FROM config_info_beta ORDER BY id OFFSET " + startRow + " ROWS FETCH NEXT "
                 + pageSize + " ROWS ONLY  )" + " g, config_info_beta t WHERE g.id = t.id";
+    
+        List<Object> paramList = new ArrayList<>();
+        paramList.add(startRow);
+        paramList.add(pageSize);
+        
+        return new MapperResult(sql, paramList);
     }
 
     @Override

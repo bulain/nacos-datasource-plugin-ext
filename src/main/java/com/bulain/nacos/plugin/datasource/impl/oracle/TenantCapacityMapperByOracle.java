@@ -1,5 +1,5 @@
 /*
- * Copyright 1999-2022 Alibaba Group Holding Ltd.
+ * Copyright 1999-2022 Bulain.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,13 @@
 
 package com.bulain.nacos.plugin.datasource.impl.oracle;
 
+import com.alibaba.nacos.common.utils.CollectionUtils;
 import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
+import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.TenantCapacityMapper;
+import com.alibaba.nacos.plugin.datasource.model.MapperContext;
+import com.alibaba.nacos.plugin.datasource.model.MapperResult;
 
 /**
  * The oracle implementation of TenantCapacityMapper.
@@ -27,15 +31,17 @@ import com.alibaba.nacos.plugin.datasource.mapper.TenantCapacityMapper;
  **/
 
 public class TenantCapacityMapperByOracle extends AbstractMapper implements TenantCapacityMapper {
-
+    
     @Override
     public String getDataSource() {
         return DataSourceConstant.ORACLE;
     }
-
+    
     @Override
-    public String getCapacityList4CorrectUsage() {
-        return "SELECT id, tenant_id FROM tenant_capacity WHERE id>? OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY";
+    public MapperResult getCapacityList4CorrectUsage(MapperContext context) {
+        String sql = "SELECT id, tenant_id FROM tenant_capacity WHERE id>? OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY";
+        return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.ID),
+                context.getWhereParameter(FieldConstant.LIMIT_SIZE)));
     }
-
+    
 }

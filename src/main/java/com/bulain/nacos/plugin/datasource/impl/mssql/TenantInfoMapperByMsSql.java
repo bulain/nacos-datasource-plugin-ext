@@ -1,5 +1,5 @@
 /*
- * Copyright 1999-2022 Alibaba Group Holding Ltd.
+ * Copyright 1999-2022 Bulain.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
 
 package com.bulain.nacos.plugin.datasource.impl.mssql;
 
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.TenantInfoMapper;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The mssql implementation of TenantInfoMapper.
