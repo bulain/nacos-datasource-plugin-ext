@@ -16,11 +16,10 @@
 
 package com.bulain.nacos.plugin.datasource.impl.pgsql;
 
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoBetaMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +30,7 @@ import java.util.List;
  * @author bulain
  **/
 
-public class ConfigInfoBetaMapperByPgSql extends AbstractMapper implements ConfigInfoBetaMapper {
+public class ConfigInfoBetaMapperByPgSql extends AbstractMapperByPgsql implements ConfigInfoBetaMapper {
 
     @Override
     public MapperResult findAllConfigInfoBetaForDumpAllFetchRows(MapperContext context) {

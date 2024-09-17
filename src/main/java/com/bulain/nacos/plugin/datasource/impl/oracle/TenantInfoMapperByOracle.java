@@ -16,9 +16,8 @@
 
 package com.bulain.nacos.plugin.datasource.impl.oracle;
 
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.TenantInfoMapper;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The oracle implementation of TenantInfoMapper.
@@ -26,7 +25,7 @@ import com.alibaba.nacos.plugin.datasource.mapper.TenantInfoMapper;
  * @author bulain
  **/
 
-public class TenantInfoMapperByOracle extends AbstractMapper implements TenantInfoMapper {
+public class TenantInfoMapperByOracle extends AbstractMapperByOracle implements TenantInfoMapper {
 
     @Override
     public String getDataSource() {

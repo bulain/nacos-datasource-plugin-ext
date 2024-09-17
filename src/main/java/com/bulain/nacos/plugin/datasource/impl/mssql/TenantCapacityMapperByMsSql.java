@@ -17,12 +17,11 @@
 package com.bulain.nacos.plugin.datasource.impl.mssql;
 
 import com.alibaba.nacos.common.utils.CollectionUtils;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.TenantCapacityMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The mssql implementation of TenantCapacityMapper.
@@ -30,7 +29,7 @@ import com.alibaba.nacos.plugin.datasource.model.MapperResult;
  * @author bulain
  **/
 
-public class TenantCapacityMapperByMsSql extends AbstractMapper implements TenantCapacityMapper {
+public class TenantCapacityMapperByMsSql extends AbstractMapperByMsql implements TenantCapacityMapper {
     
     @Override
     public String getDataSource() {

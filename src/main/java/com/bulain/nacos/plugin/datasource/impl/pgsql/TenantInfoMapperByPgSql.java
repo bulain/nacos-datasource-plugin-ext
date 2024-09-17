@@ -16,9 +16,8 @@
 
 package com.bulain.nacos.plugin.datasource.impl.pgsql;
 
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.TenantInfoMapper;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The pgsql implementation of TenantInfoMapper.
@@ -26,7 +25,7 @@ import com.alibaba.nacos.plugin.datasource.mapper.TenantInfoMapper;
  * @author bulain
  **/
 
-public class TenantInfoMapperByPgSql extends AbstractMapper implements TenantInfoMapper {
+public class TenantInfoMapperByPgSql extends AbstractMapperByPgsql implements TenantInfoMapper {
 
     @Override
     public String getDataSource() {

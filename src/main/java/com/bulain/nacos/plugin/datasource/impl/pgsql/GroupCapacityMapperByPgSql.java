@@ -17,19 +17,18 @@
 package com.bulain.nacos.plugin.datasource.impl.pgsql;
 
 import com.alibaba.nacos.common.utils.CollectionUtils;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.GroupCapacityMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The derby implementation of {@link GroupCapacityMapper}.
  *
  * @author bulain
  */
-public class GroupCapacityMapperByPgSql extends AbstractMapper implements GroupCapacityMapper {
+public class GroupCapacityMapperByPgSql extends AbstractMapperByPgsql implements GroupCapacityMapper {
     
     @Override
     public String getDataSource() {

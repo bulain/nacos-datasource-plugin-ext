@@ -17,19 +17,18 @@
 package com.bulain.nacos.plugin.datasource.impl.oracle;
 
 import com.alibaba.nacos.common.utils.CollectionUtils;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.GroupCapacityMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The oracle implementation of {@link GroupCapacityMapper}.
  *
  * @author bulain
  */
-public class GroupCapacityMapperByOracle extends AbstractMapper implements GroupCapacityMapper {
+public class GroupCapacityMapperByOracle extends AbstractMapperByOracle implements GroupCapacityMapper {
     
     @Override
     public String getDataSource() {

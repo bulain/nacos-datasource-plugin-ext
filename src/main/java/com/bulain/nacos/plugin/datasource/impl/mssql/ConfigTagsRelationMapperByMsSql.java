@@ -17,12 +17,11 @@
 package com.bulain.nacos.plugin.datasource.impl.mssql;
 
 import com.alibaba.nacos.common.utils.StringUtils;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigTagsRelationMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,7 @@ import java.util.List;
  * @author bulain
  **/
 
-public class ConfigTagsRelationMapperByMsSql extends AbstractMapper implements ConfigTagsRelationMapper {
+public class ConfigTagsRelationMapperByMsSql extends AbstractMapperByMsql implements ConfigTagsRelationMapper {
     
     @Override
     public MapperResult findConfigInfo4PageFetchRows(MapperContext context) {

@@ -16,11 +16,10 @@
 
 package com.bulain.nacos.plugin.datasource.impl.oracle;
 
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoTagMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 import java.util.Collections;
 
@@ -30,7 +29,7 @@ import java.util.Collections;
  * @author bulain
  **/
 
-public class ConfigInfoTagMapperByOracle extends AbstractMapper implements ConfigInfoTagMapper {
+public class ConfigInfoTagMapperByOracle extends AbstractMapperByOracle implements ConfigInfoTagMapper {
     
     @Override
     public MapperResult findAllConfigInfoTagForDumpAllFetchRows(MapperContext context) {

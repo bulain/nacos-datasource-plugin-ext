@@ -17,12 +17,11 @@
 package com.bulain.nacos.plugin.datasource.impl.pgsql;
 
 import com.alibaba.nacos.common.utils.CollectionUtils;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.HistoryConfigInfoMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The pgsql implementation of HistoryConfigInfoMapper.
@@ -30,7 +29,7 @@ import com.alibaba.nacos.plugin.datasource.model.MapperResult;
  * @author bulain
  **/
 
-public class HistoryConfigInfoMapperByPgSql extends AbstractMapper implements HistoryConfigInfoMapper {
+public class HistoryConfigInfoMapperByPgSql extends AbstractMapperByPgsql implements HistoryConfigInfoMapper {
     
     @Override
     public MapperResult removeConfigHistory(MapperContext context) {
