@@ -30,7 +30,7 @@ import java.util.List;
  * @author bulain
  **/
 
-public class ConfigInfoBetaMapperByMsSql extends AbstractMapperByMsql implements ConfigInfoBetaMapper {
+public class ConfigInfoBetaMapperByMsSql extends AbstractMapperByMsSql implements ConfigInfoBetaMapper {
 
     @Override
     public MapperResult findAllConfigInfoBetaForDumpAllFetchRows(MapperContext context) {

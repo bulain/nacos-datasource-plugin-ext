@@ -29,7 +29,7 @@ import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
  * @author bulain
  **/
 
-public class HistoryConfigInfoMapperByMsSql extends AbstractMapperByMsql implements HistoryConfigInfoMapper {
+public class HistoryConfigInfoMapperByMsSql extends AbstractMapperByMsSql implements HistoryConfigInfoMapper {
     
     @Override
     public MapperResult removeConfigHistory(MapperContext context) {

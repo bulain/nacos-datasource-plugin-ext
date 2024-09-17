@@ -30,7 +30,7 @@ import java.util.List;
  *
  * @author bulain
  **/
-public class ConfigInfoAggrMapperByPgSql extends AbstractMapperByPgsql implements ConfigInfoAggrMapper {
+public class ConfigInfoAggrMapperByPgSql extends AbstractMapperByPgSql implements ConfigInfoAggrMapper {
     
     @Override
     public MapperResult findConfigInfoAggrByPageFetchRows(MapperContext context) {

@@ -32,7 +32,7 @@ import java.util.List;
  * @author bulain
  **/
 
-public class ConfigTagsRelationMapperByMsSql extends AbstractMapperByMsql implements ConfigTagsRelationMapper {
+public class ConfigTagsRelationMapperByMsSql extends AbstractMapperByMsSql implements ConfigTagsRelationMapper {
     
     @Override
     public MapperResult findConfigInfo4PageFetchRows(MapperContext context) {

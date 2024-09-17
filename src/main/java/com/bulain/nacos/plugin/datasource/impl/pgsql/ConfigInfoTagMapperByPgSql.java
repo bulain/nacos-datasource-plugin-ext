@@ -29,7 +29,7 @@ import java.util.Collections;
  * @author bulain
  **/
 
-public class ConfigInfoTagMapperByPgSql extends AbstractMapperByPgsql implements ConfigInfoTagMapper {
+public class ConfigInfoTagMapperByPgSql extends AbstractMapperByPgSql implements ConfigInfoTagMapper {
     
     @Override
     public MapperResult findAllConfigInfoTagForDumpAllFetchRows(MapperContext context) {

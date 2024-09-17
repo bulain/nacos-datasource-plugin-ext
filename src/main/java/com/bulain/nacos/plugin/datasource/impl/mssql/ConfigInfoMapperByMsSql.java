@@ -36,7 +36,7 @@ import java.util.List;
  * @author bulain
  **/
 
-public class ConfigInfoMapperByMsSql extends AbstractMapperByMsql implements ConfigInfoMapper {
+public class ConfigInfoMapperByMsSql extends AbstractMapperByMsSql implements ConfigInfoMapper {
     
     @Override
     public MapperResult findConfigInfoByAppFetchRows(MapperContext context) {

@@ -36,7 +36,7 @@ import java.util.List;
  * @author bulain
  **/
 
-public class ConfigInfoMapperByPgSql extends AbstractMapperByPgsql implements ConfigInfoMapper {
+public class ConfigInfoMapperByPgSql extends AbstractMapperByPgSql implements ConfigInfoMapper {
     
     private static final String DATA_ID = "dataId";
     
