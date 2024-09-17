@@ -29,7 +29,7 @@ import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
  * @author bulain
  **/
 
-public class TenantCapacityMapperByMsSql extends AbstractMapperByMsql implements TenantCapacityMapper {
+public class TenantCapacityMapperByMsSql extends AbstractMapperByMsSql implements TenantCapacityMapper {
     
     @Override
     public String getDataSource() {

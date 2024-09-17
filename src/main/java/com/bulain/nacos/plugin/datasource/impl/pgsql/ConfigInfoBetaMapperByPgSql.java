@@ -30,7 +30,7 @@ import java.util.List;
  * @author bulain
  **/
 
-public class ConfigInfoBetaMapperByPgSql extends AbstractMapperByPgsql implements ConfigInfoBetaMapper {
+public class ConfigInfoBetaMapperByPgSql extends AbstractMapperByPgSql implements ConfigInfoBetaMapper {
 
     @Override
     public MapperResult findAllConfigInfoBetaForDumpAllFetchRows(MapperContext context) {

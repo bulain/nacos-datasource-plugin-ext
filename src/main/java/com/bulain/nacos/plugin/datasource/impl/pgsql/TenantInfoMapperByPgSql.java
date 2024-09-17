@@ -25,7 +25,7 @@ import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
  * @author bulain
  **/
 
-public class TenantInfoMapperByPgSql extends AbstractMapperByPgsql implements TenantInfoMapper {
+public class TenantInfoMapperByPgSql extends AbstractMapperByPgSql implements TenantInfoMapper {
 
     @Override
     public String getDataSource() {

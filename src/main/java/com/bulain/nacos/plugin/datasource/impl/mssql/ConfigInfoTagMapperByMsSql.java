@@ -29,7 +29,7 @@ import java.util.Collections;
  * @author bulain
  **/
 
-public class ConfigInfoTagMapperByMsSql extends AbstractMapperByMsql implements ConfigInfoTagMapper {
+public class ConfigInfoTagMapperByMsSql extends AbstractMapperByMsSql implements ConfigInfoTagMapper {
     
     @Override
     public MapperResult findAllConfigInfoTagForDumpAllFetchRows(MapperContext context) {

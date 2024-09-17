@@ -28,7 +28,7 @@ import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
  *
  * @author bulain
  */
-public class GroupCapacityMapperByPgSql extends AbstractMapperByPgsql implements GroupCapacityMapper {
+public class GroupCapacityMapperByPgSql extends AbstractMapperByPgSql implements GroupCapacityMapper {
     
     @Override
     public String getDataSource() {
