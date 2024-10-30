@@ -21,7 +21,6 @@ import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.HistoryConfigInfoMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The oracle implementation of ConfigInfoMapper.
@@ -47,11 +46,6 @@ public class HistoryConfigInfoMapperByOracle extends AbstractMapperByOracle impl
                         + context.getStartRow() + " ROWS FETCH NEXT " + context.getPageSize() + " ROWS ONLY";
         return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.DATA_ID),
                 context.getWhereParameter(FieldConstant.GROUP_ID), context.getWhereParameter(FieldConstant.TENANT_ID)));
-    }
-    
-    @Override
-    public String getDataSource() {
-        return DataSourceConstant.ORACLE;
     }
 
     @Override

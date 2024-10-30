@@ -21,7 +21,6 @@ import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.TenantCapacityMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The pgsql implementation of TenantCapacityMapper.
@@ -30,11 +29,6 @@ import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
  **/
 
 public class TenantCapacityMapperByPgSql extends AbstractMapperByPgSql implements TenantCapacityMapper {
-    
-    @Override
-    public String getDataSource() {
-        return DataSourceConstant.PGSQL;
-    }
     
     @Override
     public MapperResult getCapacityList4CorrectUsage(MapperContext context) {

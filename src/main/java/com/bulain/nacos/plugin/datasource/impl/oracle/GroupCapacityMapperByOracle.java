@@ -21,7 +21,6 @@ import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.GroupCapacityMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The oracle implementation of {@link GroupCapacityMapper}.
@@ -29,11 +28,6 @@ import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
  * @author bulain
  */
 public class GroupCapacityMapperByOracle extends AbstractMapperByOracle implements GroupCapacityMapper {
-    
-    @Override
-    public String getDataSource() {
-        return DataSourceConstant.ORACLE;
-    }
     
     @Override
     public MapperResult selectGroupInfoBySize(MapperContext context) {

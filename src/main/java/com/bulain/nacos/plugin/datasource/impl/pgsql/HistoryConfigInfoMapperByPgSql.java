@@ -21,7 +21,6 @@ import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.HistoryConfigInfoMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The pgsql implementation of HistoryConfigInfoMapper.
@@ -48,8 +47,4 @@ public class HistoryConfigInfoMapperByPgSql extends AbstractMapperByPgSql implem
                 context.getWhereParameter(FieldConstant.GROUP_ID), context.getWhereParameter(FieldConstant.TENANT_ID)));
     }
     
-    @Override
-    public String getDataSource() {
-        return DataSourceConstant.PGSQL;
-    }
 }

@@ -21,7 +21,6 @@ import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.GroupCapacityMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The mssql implementation of {@link GroupCapacityMapper}.
@@ -29,11 +28,6 @@ import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
  * @author bulain
  */
 public class GroupCapacityMapperByMsSql extends AbstractMapperByMsSql implements GroupCapacityMapper {
-    
-    @Override
-    public String getDataSource() {
-        return DataSourceConstant.MSSQL;
-    }
     
     @Override
     public MapperResult selectGroupInfoBySize(MapperContext context) {

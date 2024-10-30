@@ -21,7 +21,6 @@ import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoAggrMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 import java.util.List;
 
@@ -46,11 +45,6 @@ public class ConfigInfoAggrMapperByMsSql extends AbstractMapperByMsSql implement
                         + pageSize + " ROWS ONLY";
         List<Object> paramList = CollectionUtils.list(dataId, groupId, tenantId);
         return new MapperResult(sql, paramList);
-    }
-    
-    @Override
-    public String getDataSource() {
-        return DataSourceConstant.MSSQL;
     }
 
 }

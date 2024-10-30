@@ -19,7 +19,6 @@ package com.bulain.nacos.plugin.datasource.impl.mssql;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoTagMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 import java.util.Collections;
 
@@ -40,8 +39,4 @@ public class ConfigInfoTagMapperByMsSql extends AbstractMapperByMsSql implements
         return new MapperResult(sql, Collections.emptyList());
     }
     
-    @Override
-    public String getDataSource() {
-        return DataSourceConstant.MSSQL;
-    }
 }

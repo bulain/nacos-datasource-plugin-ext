@@ -23,7 +23,6 @@ import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -271,11 +270,6 @@ public class ConfigInfoMapperByMsSql extends AbstractMapperByMsSql implements Co
                         context.getPageSize()));
     }
     
-    @Override
-    public String getDataSource() {
-        return DataSourceConstant.MSSQL;
-    }
-
     @Override
     public MapperResult findChangeConfig(MapperContext context) {
         String sql =

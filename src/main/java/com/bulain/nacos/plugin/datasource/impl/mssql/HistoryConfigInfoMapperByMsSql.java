@@ -21,7 +21,6 @@ import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.HistoryConfigInfoMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 /**
  * The mssql implementation of ConfigInfoMapper.
@@ -49,11 +48,6 @@ public class HistoryConfigInfoMapperByMsSql extends AbstractMapperByMsSql implem
                 context.getWhereParameter(FieldConstant.GROUP_ID), context.getWhereParameter(FieldConstant.TENANT_ID)));
     }
     
-    @Override
-    public String getDataSource() {
-        return DataSourceConstant.MSSQL;
-    }
-
     @Override
     public MapperResult findDeletedConfig(MapperContext context) {
         return new MapperResult(

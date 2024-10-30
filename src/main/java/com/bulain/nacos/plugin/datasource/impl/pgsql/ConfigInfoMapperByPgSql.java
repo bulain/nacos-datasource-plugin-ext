@@ -23,7 +23,6 @@ import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -266,11 +265,6 @@ public class ConfigInfoMapperByPgSql extends AbstractMapperByPgSql implements Co
         return new MapperResult(sql,
                 CollectionUtils.list(context.getWhereParameter(FieldConstant.TENANT_ID), context.getStartRow(),
                         context.getPageSize()));
-    }
-    
-    @Override
-    public String getDataSource() {
-        return DataSourceConstant.PGSQL;
     }
     
 }
