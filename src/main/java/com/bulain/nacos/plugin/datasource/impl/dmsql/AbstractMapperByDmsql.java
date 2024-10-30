@@ -44,7 +44,7 @@ public abstract class AbstractMapperByDmsql extends AbstractMapper {
 
     @Override
     public String getDataSource() {
-        return DataSourceConstant.DM;
+        return DataSourceConstant.DMSQL;
     }
 
 }

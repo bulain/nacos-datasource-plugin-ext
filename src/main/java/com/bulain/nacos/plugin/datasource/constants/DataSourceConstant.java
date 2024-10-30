@@ -25,5 +25,5 @@ public class DataSourceConstant {
     public static final String MSSQL = "mssql";
     public static final String PGSQL = "pgsql";
     public static final String ORACLE = "oracle";
-    public static final String DM = "dm";
+    public static final String DMSQL = "dmsql";
 }
