@@ -22,7 +22,7 @@ import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
 import java.util.List;
 
 /**
- * The abstract mysql mapper contains CRUD methods.
+ * The abstract oracle mapper contains CRUD methods.
  *
  * @author bulain
  **/
