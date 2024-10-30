@@ -27,3 +27,13 @@ com.bulain.nacos.plugin.datasource.impl.pgsql.HistoryConfigInfoMapperByPgSql
 com.bulain.nacos.plugin.datasource.impl.pgsql.TenantInfoMapperByPgSql
 com.bulain.nacos.plugin.datasource.impl.pgsql.TenantCapacityMapperByPgSql
 com.bulain.nacos.plugin.datasource.impl.pgsql.GroupCapacityMapperByPgSql
+
+com.bulain.nacos.plugin.datasource.impl.dmsql.ConfigInfoAggrMapperByDmsql
+com.bulain.nacos.plugin.datasource.impl.dmsql.ConfigInfoBetaMapperByDmsql
+com.bulain.nacos.plugin.datasource.impl.dmsql.ConfigInfoMapperByDmsql
+com.bulain.nacos.plugin.datasource.impl.dmsql.ConfigInfoTagMapperByDmsql
+com.bulain.nacos.plugin.datasource.impl.dmsql.ConfigTagsRelationMapperByDmsql
+com.bulain.nacos.plugin.datasource.impl.dmsql.HistoryConfigInfoMapperByDmsql
+com.bulain.nacos.plugin.datasource.impl.dmsql.TenantInfoMapperByDmsql
+com.bulain.nacos.plugin.datasource.impl.dmsql.TenantCapacityMapperByDmsql
+com.bulain.nacos.plugin.datasource.impl.dmsql.GroupCapacityMapperByDmsql
