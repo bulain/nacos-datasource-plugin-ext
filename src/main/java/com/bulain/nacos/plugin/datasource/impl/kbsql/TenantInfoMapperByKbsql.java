@@ -11,20 +11,19 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License.
+ * OFFSETations under the License.
  */
 
-package com.bulain.nacos.plugin.datasource.constants;
+package com.bulain.nacos.plugin.datasource.impl.kbsql;
+
+import com.alibaba.nacos.plugin.datasource.mapper.TenantInfoMapper;
 
 /**
- * The data source name.
+ * The kbsql implementation of TenantInfoMapper.
+ *
  * @author bulain
  **/
 
-public class DataSourceConstant {
-    public static final String MSSQL = "mssql";
-    public static final String PGSQL = "pgsql";
-    public static final String ORACLE = "oracle";
-    public static final String DMSQL = "dmsql";
-    public static final String KBSQL = "kbsql";
+public class TenantInfoMapperByKbsql extends AbstractMapperByKbsql implements TenantInfoMapper {
+
 }
