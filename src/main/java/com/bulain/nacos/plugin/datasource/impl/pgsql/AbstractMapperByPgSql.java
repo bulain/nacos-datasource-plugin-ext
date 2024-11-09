@@ -1,10 +1,8 @@
 package com.bulain.nacos.plugin.datasource.impl.pgsql;
 
-import com.alibaba.nacos.plugin.datasource.enums.mysql.TrustedMysqlFunctionEnum;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
-
-import java.util.List;
+import com.bulain.nacos.plugin.datasource.enums.pgsql.TrustedPgsqlFunctionEnum;
 
 /**
  * The abstract pgsql mapper contains CRUD methods.
@@ -14,17 +12,8 @@ import java.util.List;
 public abstract class AbstractMapperByPgSql extends AbstractMapper {
 
     @Override
-    public String select(List<String> columns, List<String> where) {
-        String sql = super.select(columns, where);
-        if (sql.contains("`")) {
-            sql = sql.replaceAll("`", "");
-        }
-        return sql;
-    }
-
-    @Override
     public String getFunction(String functionName) {
-        return TrustedMysqlFunctionEnum.getFunctionByName(functionName);
+        return TrustedPgsqlFunctionEnum.getFunctionByName(functionName);
     }
 
     @Override
