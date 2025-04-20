@@ -196,7 +196,7 @@ spring.sql.init.platform=dmsql
 db.num=1
 
 ### Connect URL of DB:
-db.url.0=jdbc:dm://127.0.0.1:5236/DAMENG
+db.url.0=jdbc:dm://127.0.0.1:5236/nacos
 db.user.0=nacos
 db.password.0=******
 db.pool.config.driverClassName=dm.jdbc.driver.DmDriver
