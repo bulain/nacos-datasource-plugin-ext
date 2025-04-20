@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-package com.bulain.nacos.plugin.datasource.impl.dmsql;
+package com.bulain.nacos.plugin.datasource.impl.pgsql;
 
-import com.alibaba.nacos.plugin.datasource.mapper.HistoryConfigInfoMapper;
+import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoTagMapper;
 import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
-import com.bulain.nacos.plugin.datasource.impl.ext.HistoryConfigInfoMapperByExt;
+import com.bulain.nacos.plugin.datasource.impl.ext.ConfigInfoTagMapperByExt;
 
 /**
- * The dmsql implementation of ConfigInfoMapper.
+ * The pgsql implementation of ConfigInfoTagMapper.
  *
  * @author bulain
  **/
 
-public class HistoryConfigInfoMapperByDmsql extends HistoryConfigInfoMapperByExt implements HistoryConfigInfoMapper {
+public class ConfigInfoTagMapperByPgsql extends ConfigInfoTagMapperByExt implements ConfigInfoTagMapper {
 
     @Override
     public String getDataSource() {
-        return DataSourceConstant.DMSQL;
+        return DataSourceConstant.PGSQL;
     }
 
 }

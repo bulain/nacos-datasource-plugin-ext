@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bulain.nacos.plugin.datasource.impl.mssql;
+package com.bulain.nacos.plugin.datasource.impl.ext;
 
 import com.alibaba.nacos.common.utils.CollectionUtils;
 import com.alibaba.nacos.common.utils.NamespaceUtil;
@@ -28,19 +28,18 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * The mssql implementation of {@link GroupCapacityMapper}.
+ * The ext implementation of {@link GroupCapacityMapper}.
  *
  * @author bulain
  */
-public class GroupCapacityMapperByMsSql extends AbstractMapperByMsSql implements GroupCapacityMapper {
-    
+public abstract class GroupCapacityMapperByExt extends AbstractMapperByExt implements GroupCapacityMapper {
+
     @Override
     public MapperResult selectGroupInfoBySize(MapperContext context) {
-        String sql = "SELECT id, group_id FROM group_capacity WHERE id > ? OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY";
+        String sql = "SELECT id, group_id FROM group_capacity WHERE id > ? ORDER BY id" + pageLimit(context);
         return new MapperResult(sql,
-                CollectionUtils.list(context.getWhereParameter(FieldConstant.ID), context.getPageSize()));
+                CollectionUtils.list(context.getWhereParameter(FieldConstant.ID)));
     }
-
 
     @Override
     public MapperResult select(MapperContext context) {

@@ -1,12 +1,12 @@
-com.bulain.nacos.plugin.datasource.impl.mssql.ConfigInfoGrayMapperByMsSql
-com.bulain.nacos.plugin.datasource.impl.mssql.ConfigInfoBetaMapperByMsSql
-com.bulain.nacos.plugin.datasource.impl.mssql.ConfigInfoMapperByMsSql
-com.bulain.nacos.plugin.datasource.impl.mssql.ConfigInfoTagMapperByMsSql
-com.bulain.nacos.plugin.datasource.impl.mssql.ConfigTagsRelationMapperByMsSql
-com.bulain.nacos.plugin.datasource.impl.mssql.HistoryConfigInfoMapperByMsSql
-com.bulain.nacos.plugin.datasource.impl.mssql.TenantInfoMapperByMsSql
-com.bulain.nacos.plugin.datasource.impl.mssql.TenantCapacityMapperByMsSql
-com.bulain.nacos.plugin.datasource.impl.mssql.GroupCapacityMapperByMsSql
+com.bulain.nacos.plugin.datasource.impl.mssql.ConfigInfoGrayMapperByMssql
+com.bulain.nacos.plugin.datasource.impl.mssql.ConfigInfoBetaMapperByMssql
+com.bulain.nacos.plugin.datasource.impl.mssql.ConfigInfoMapperByMssql
+com.bulain.nacos.plugin.datasource.impl.mssql.ConfigInfoTagMapperByMssql
+com.bulain.nacos.plugin.datasource.impl.mssql.ConfigTagsRelationMapperByMssql
+com.bulain.nacos.plugin.datasource.impl.mssql.HistoryConfigInfoMapperByMssql
+com.bulain.nacos.plugin.datasource.impl.mssql.TenantInfoMapperByMssql
+com.bulain.nacos.plugin.datasource.impl.mssql.TenantCapacityMapperByMssql
+com.bulain.nacos.plugin.datasource.impl.mssql.GroupCapacityMapperByMssql
 
 com.bulain.nacos.plugin.datasource.impl.oracle.ConfigInfoGrayMapperByOracle
 com.bulain.nacos.plugin.datasource.impl.oracle.ConfigInfoBetaMapperByOracle
@@ -18,15 +18,15 @@ com.bulain.nacos.plugin.datasource.impl.oracle.TenantInfoMapperByOracle
 com.bulain.nacos.plugin.datasource.impl.oracle.TenantCapacityMapperByOracle
 com.bulain.nacos.plugin.datasource.impl.oracle.GroupCapacityMapperByOracle
 
-com.bulain.nacos.plugin.datasource.impl.pgsql.ConfigInfoGrayMapperByPgSql
-com.bulain.nacos.plugin.datasource.impl.pgsql.ConfigInfoBetaMapperByPgSql
-com.bulain.nacos.plugin.datasource.impl.pgsql.ConfigInfoMapperByPgSql
-com.bulain.nacos.plugin.datasource.impl.pgsql.ConfigInfoTagMapperByPgSql
-com.bulain.nacos.plugin.datasource.impl.pgsql.ConfigTagsRelationMapperByPgSql
-com.bulain.nacos.plugin.datasource.impl.pgsql.HistoryConfigInfoMapperByPgSql
-com.bulain.nacos.plugin.datasource.impl.pgsql.TenantInfoMapperByPgSql
-com.bulain.nacos.plugin.datasource.impl.pgsql.TenantCapacityMapperByPgSql
-com.bulain.nacos.plugin.datasource.impl.pgsql.GroupCapacityMapperByPgSql
+com.bulain.nacos.plugin.datasource.impl.pgsql.ConfigInfoGrayMapperByPgsql
+com.bulain.nacos.plugin.datasource.impl.pgsql.ConfigInfoBetaMapperByPgsql
+com.bulain.nacos.plugin.datasource.impl.pgsql.ConfigInfoMapperByPgsql
+com.bulain.nacos.plugin.datasource.impl.pgsql.ConfigInfoTagMapperByPgsql
+com.bulain.nacos.plugin.datasource.impl.pgsql.ConfigTagsRelationMapperByPgsql
+com.bulain.nacos.plugin.datasource.impl.pgsql.HistoryConfigInfoMapperByPgsql
+com.bulain.nacos.plugin.datasource.impl.pgsql.TenantInfoMapperByPgsql
+com.bulain.nacos.plugin.datasource.impl.pgsql.TenantCapacityMapperByPgsql
+com.bulain.nacos.plugin.datasource.impl.pgsql.GroupCapacityMapperByPgsql
 
 com.bulain.nacos.plugin.datasource.impl.dmsql.ConfigInfoGrayMapperByDmsql
 com.bulain.nacos.plugin.datasource.impl.dmsql.ConfigInfoBetaMapperByDmsql

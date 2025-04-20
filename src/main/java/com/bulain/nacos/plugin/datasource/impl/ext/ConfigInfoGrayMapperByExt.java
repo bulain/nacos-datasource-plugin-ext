@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bulain.nacos.plugin.datasource.impl.pgsql;
+package com.bulain.nacos.plugin.datasource.impl.ext;
 
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoGrayMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
@@ -23,18 +23,18 @@ import com.alibaba.nacos.plugin.datasource.model.MapperResult;
 import java.util.Collections;
 
 /**
- * The pgsql implementation of ConfigInfoAggrMapper.
+ * The ext implementation of ConfigInfoGrayMapper.
  *
  * @author bulain
  **/
-public class ConfigInfoGrayMapperByPgSql extends AbstractMapperByPgSql implements ConfigInfoGrayMapper {
+public abstract class ConfigInfoGrayMapperByExt extends AbstractMapperByExt implements ConfigInfoGrayMapper {
 
     @Override
     public MapperResult findAllConfigInfoGrayForDumpAllFetchRows(MapperContext context) {
-        final int startRow = context.getStartRow();
-        final int pageSize = context.getPageSize();
+
         String sql = "SELECT id,data_id,group_id,tenant_id,gray_name,gray_rule,app_name,content,md5,gmt_modified "
-                + " FROM config_info_gray ORDER BY id OFFSET " + startRow + " LIMIT " + pageSize;
+                + " FROM config_info_gray ORDER BY id " + pageLimit(context);
+
         return new MapperResult(sql, Collections.emptyList());
     }
 

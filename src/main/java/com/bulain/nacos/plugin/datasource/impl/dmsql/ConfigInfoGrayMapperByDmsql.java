@@ -17,26 +17,19 @@
 package com.bulain.nacos.plugin.datasource.impl.dmsql;
 
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoGrayMapper;
-import com.alibaba.nacos.plugin.datasource.model.MapperContext;
-import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-
-import java.util.Collections;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
+import com.bulain.nacos.plugin.datasource.impl.ext.ConfigInfoGrayMapperByExt;
 
 /**
  * The dmsql implementation of ConfigInfoGrayMapper.
  *
  * @author bulain
  **/
-public class ConfigInfoGrayMapperByDmsql extends AbstractMapperByDmsql implements ConfigInfoGrayMapper {
+public class ConfigInfoGrayMapperByDmsql extends ConfigInfoGrayMapperByExt implements ConfigInfoGrayMapper {
 
     @Override
-    public MapperResult findAllConfigInfoGrayForDumpAllFetchRows(MapperContext context) {
-        final int startRow = context.getStartRow();
-        final int pageSize = context.getPageSize();
-        String sql = "SELECT id,data_id,group_id,tenant_id,gray_name,gray_rule,app_name,content,md5,gmt_modified "
-                + " FROM config_info_gray ORDER BY id OFFSET " + startRow + " ROWS FETCH NEXT "
-                + pageSize + " ROWS ONLY";
-        return new MapperResult(sql, Collections.emptyList());
+    public String getDataSource() {
+        return DataSourceConstant.DMSQL;
     }
 
 }

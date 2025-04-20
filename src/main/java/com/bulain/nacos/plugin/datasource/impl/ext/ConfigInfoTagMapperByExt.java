@@ -14,28 +14,26 @@
  * limitations under the License.
  */
 
-package com.bulain.nacos.plugin.datasource.impl.mssql;
+package com.bulain.nacos.plugin.datasource.impl.ext;
 
-import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoGrayMapper;
+import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoTagMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
 
 import java.util.Collections;
 
 /**
- * The mssql implementation of ConfigInfoGrayMapper.
+ * The ext implementation of ConfigInfoTagMapper.
  *
  * @author bulain
  **/
-public class ConfigInfoGrayMapperByMsSql extends AbstractMapperByMsSql implements ConfigInfoGrayMapper {
+
+public abstract class ConfigInfoTagMapperByExt extends AbstractMapperByExt implements ConfigInfoTagMapper {
 
     @Override
-    public MapperResult findAllConfigInfoGrayForDumpAllFetchRows(MapperContext context) {
-        int startRow =  context.getStartRow();
-        int pageSize =  context.getPageSize();
-        String sql = "SELECT id,data_id,group_id,tenant_id,gray_name,gray_rule,app_name,content,md5,gmt_modified "
-                + " FROM config_info_gray ORDER BY id OFFSET " + startRow + " ROWS FETCH NEXT "
-                + pageSize + " ROWS ONLY";
+    public MapperResult findAllConfigInfoTagForDumpAllFetchRows(MapperContext context) {
+        String sql = "SELECT t.id,data_id,group_id,tenant_id,tag_id,app_name,content,md5,gmt_modified "
+                + " FROM config_info_tag ORDER BY id " + pageLimit(context);
         return new MapperResult(sql, Collections.emptyList());
     }
 

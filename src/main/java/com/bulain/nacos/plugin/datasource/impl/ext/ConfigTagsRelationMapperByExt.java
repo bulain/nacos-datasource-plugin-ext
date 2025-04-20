@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bulain.nacos.plugin.datasource.impl.mssql;
+package com.bulain.nacos.plugin.datasource.impl.ext;
 
 import com.alibaba.nacos.common.utils.StringUtils;
 import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
@@ -26,13 +26,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The mssql implementation of ConfigTagsRelationMapper.
+ * The ext implementation of ConfigTagsRelationMapper.
  *
  * @author bulain
  **/
 
-public class ConfigTagsRelationMapperByMsSql extends AbstractMapperByMsSql implements ConfigTagsRelationMapper {
-    
+public abstract class ConfigTagsRelationMapperByExt extends AbstractMapperByExt implements ConfigTagsRelationMapper {
+
     @Override
     public MapperResult findConfigInfo4PageFetchRows(MapperContext context) {
         final String appName = (String) context.getWhereParameter(FieldConstant.APP_NAME);
@@ -41,16 +41,16 @@ public class ConfigTagsRelationMapperByMsSql extends AbstractMapperByMsSql imple
         final String content = (String) context.getWhereParameter(FieldConstant.CONTENT);
         final String tenantId = (String) context.getWhereParameter(FieldConstant.TENANT_ID);
         final String[] tagArr = (String[]) context.getWhereParameter(FieldConstant.TAG_ARR);
-        
+
         List<Object> paramList = new ArrayList<>();
         StringBuilder where = new StringBuilder(" WHERE ");
         final String baseSql =
                 "SELECT a.id,a.data_id,a.group_id,a.tenant_id,a.app_name,a.content FROM config_info  a LEFT JOIN "
                         + "config_tags_relation b ON a.id=b.id";
-        
+
         where.append(" a.tenant_id=? ");
         paramList.add(tenantId);
-        
+
         if (StringUtils.isNotBlank(dataId)) {
             where.append(" AND a.data_id=? ");
             paramList.add(dataId);
@@ -76,11 +76,10 @@ public class ConfigTagsRelationMapperByMsSql extends AbstractMapperByMsSql imple
             paramList.add(tagArr[i]);
         }
         where.append(") ");
-        String sql = baseSql + where + " OFFSET " + context.getStartRow() + " ROWS FETCH NEXT " + context.getPageSize()
-                + " ROWS ONLY";
+        String sql = baseSql + where + " ORDER BY id " + pageLimit(context);
         return new MapperResult(sql, paramList);
     }
-    
+
     @Override
     public MapperResult findConfigInfoLike4PageFetchRows(MapperContext context) {
         final String appName = (String) context.getWhereParameter(FieldConstant.APP_NAME);
@@ -89,16 +88,16 @@ public class ConfigTagsRelationMapperByMsSql extends AbstractMapperByMsSql imple
         final String content = (String) context.getWhereParameter(FieldConstant.CONTENT);
         final String tenantId = (String) context.getWhereParameter(FieldConstant.TENANT_ID);
         final String[] tagArr = (String[]) context.getWhereParameter(FieldConstant.TAG_ARR);
-        
+
         List<Object> paramList = new ArrayList<>();
         StringBuilder where = new StringBuilder(" WHERE ");
         final String baseSql =
                 "SELECT a.ID,a.data_id,a.group_id,a.tenant_id,a.app_name,a.content FROM config_info  a LEFT JOIN "
                         + "config_tags_relation b ON a.id=b.id ";
-        
+
         where.append(" a.tenant_id LIKE ? ");
         paramList.add(tenantId);
-        
+
         if (!StringUtils.isBlank(dataId)) {
             where.append(" AND a.data_id LIKE ? ");
             paramList.add(dataId);
@@ -115,7 +114,7 @@ public class ConfigTagsRelationMapperByMsSql extends AbstractMapperByMsSql imple
             where.append(" AND a.content LIKE ? ");
             paramList.add(content);
         }
-        
+
         where.append(" AND b.tag_name IN (");
         for (int i = 0; i < tagArr.length; i++) {
             if (i != 0) {
@@ -125,9 +124,8 @@ public class ConfigTagsRelationMapperByMsSql extends AbstractMapperByMsSql imple
             paramList.add(tagArr[i]);
         }
         where.append(") ");
-        String sql = baseSql + where + " OFFSET " + context.getStartRow() + " ROWS FETCH NEXT " + context.getPageSize()
-                + " ROWS ONLY";
+        String sql = baseSql + where + " ORDER BY id " + pageLimit(context);
         return new MapperResult(sql, paramList);
     }
-    
+
 }

@@ -17,25 +17,19 @@
 package com.bulain.nacos.plugin.datasource.impl.kbsql;
 
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoGrayMapper;
-import com.alibaba.nacos.plugin.datasource.model.MapperContext;
-import com.alibaba.nacos.plugin.datasource.model.MapperResult;
-
-import java.util.Collections;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
+import com.bulain.nacos.plugin.datasource.impl.ext.ConfigInfoGrayMapperByExt;
 
 /**
  * The kbsql implementation of ConfigInfoGrayMapper.
  *
  * @author bulain
  **/
-public class ConfigInfoGrayMapperByKbsql extends AbstractMapperByKbsql implements ConfigInfoGrayMapper {
-    
+public class ConfigInfoGrayMapperByKbsql extends ConfigInfoGrayMapperByExt implements ConfigInfoGrayMapper {
+
     @Override
-    public MapperResult findAllConfigInfoGrayForDumpAllFetchRows(MapperContext context) {
-        int startRow =  context.getStartRow();
-        int pageSize =  context.getPageSize();
-        String sql = "SELECT id,data_id,group_id,tenant_id,gray_name,gray_rule,app_name,content,md5,gmt_modified "
-                + " FROM config_info_gray ORDER BY id OFFSET " + startRow + " LIMIT " + pageSize;
-        return new MapperResult(sql, Collections.emptyList());
+    public String getDataSource() {
+        return DataSourceConstant.KBSQL;
     }
 
 }

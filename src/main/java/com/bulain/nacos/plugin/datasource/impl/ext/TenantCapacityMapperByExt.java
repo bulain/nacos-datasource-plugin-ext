@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bulain.nacos.plugin.datasource.impl.mssql;
+package com.bulain.nacos.plugin.datasource.impl.ext;
 
 import com.alibaba.nacos.common.utils.CollectionUtils;
 import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
@@ -27,12 +27,12 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * The mssql implementation of TenantCapacityMapper.
+ * The ext implementation of TenantCapacityMapper.
  *
  * @author bulain
  **/
 
-public class TenantCapacityMapperByMsSql extends AbstractMapperByMsSql implements TenantCapacityMapper {
+public abstract class TenantCapacityMapperByExt extends AbstractMapperByExt implements TenantCapacityMapper {
 
     @Override
     public MapperResult select(MapperContext context) {
@@ -43,9 +43,10 @@ public class TenantCapacityMapperByMsSql extends AbstractMapperByMsSql implement
 
     @Override
     public MapperResult getCapacityList4CorrectUsage(MapperContext context) {
-        String sql = "SELECT id, tenant_id FROM tenant_capacity WHERE id>? OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY";
-        return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.ID),
-                context.getWhereParameter(FieldConstant.LIMIT_SIZE)));
+        String sql = "SELECT id, tenant_id FROM tenant_capacity " +
+                "WHERE id > ? " +
+                "ORDER BY id " + rowsLimit(context.getWhereParameter(FieldConstant.LIMIT_SIZE));
+        return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.ID)));
     }
 
     @Override

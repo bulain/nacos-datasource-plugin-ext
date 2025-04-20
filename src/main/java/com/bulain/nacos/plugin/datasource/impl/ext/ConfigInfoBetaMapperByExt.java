@@ -14,28 +14,29 @@
  * limitations under the License.
  */
 
-package com.bulain.nacos.plugin.datasource.impl.pgsql;
+package com.bulain.nacos.plugin.datasource.impl.ext;
 
-import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoTagMapper;
+import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoBetaMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
 
 import java.util.Collections;
 
 /**
- * The pgsql implementation of ConfigInfoTagMapper.
+ * The ext implementation of ConfigInfoBetaMapper.
  *
  * @author bulain
  **/
 
-public class ConfigInfoTagMapperByPgSql extends AbstractMapperByPgSql implements ConfigInfoTagMapper {
-    
+public abstract class ConfigInfoBetaMapperByExt extends AbstractMapperByExt implements ConfigInfoBetaMapper {
+
     @Override
-    public MapperResult findAllConfigInfoTagForDumpAllFetchRows(MapperContext context) {
-        String sql = " SELECT t.id,data_id,group_id,tenant_id,tag_id,app_name,content,md5,gmt_modified "
-                + " FROM (  SELECT id FROM config_info_tag  ORDER BY id OFFSET " + context.getStartRow() + " LIMIT "
-                + context.getPageSize() + " ) " + "g, config_info_tag t  WHERE g.id = t.id  ";
+    public MapperResult findAllConfigInfoBetaForDumpAllFetchRows(MapperContext context) {
+
+        String sql = "SELECT t.id,data_id,group_id,tenant_id,app_name,content,md5,gmt_modified,beta_ips "
+                + " FROM config_info_beta ORDER BY id " + pageLimit(context);
+
         return new MapperResult(sql, Collections.emptyList());
     }
-    
+
 }

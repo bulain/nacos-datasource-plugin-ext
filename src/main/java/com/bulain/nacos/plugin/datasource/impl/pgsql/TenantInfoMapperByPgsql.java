@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-package com.bulain.nacos.plugin.datasource.impl.mssql;
+package com.bulain.nacos.plugin.datasource.impl.pgsql;
 
 import com.alibaba.nacos.plugin.datasource.mapper.TenantInfoMapper;
+import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
+import com.bulain.nacos.plugin.datasource.impl.ext.TenantInfoMapperByExt;
 
 /**
- * The mssql implementation of TenantInfoMapper.
+ * The pgsql implementation of TenantInfoMapper.
  *
  * @author bulain
  **/
 
-public class TenantInfoMapperByMsSql extends AbstractMapperByMsSql implements TenantInfoMapper {
+public class TenantInfoMapperByPgsql extends TenantInfoMapperByExt implements TenantInfoMapper {
+
+    @Override
+    public String getDataSource() {
+        return DataSourceConstant.PGSQL;
+    }
 
 }
