@@ -13,27 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.bulain.nacos.plugin.datasource.impl.oracle;
 
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
+package com.bulain.nacos.plugin.datasource.impl.pgsql;
+
+import com.alibaba.nacos.plugin.datasource.mapper.HistoryConfigInfoMapper;
 import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
-import com.bulain.nacos.plugin.datasource.enums.oracle.TrustedOracleFunctionEnum;
+import com.bulain.nacos.plugin.datasource.impl.ext.HistoryConfigInfoMapperByExt;
 
 /**
- * The abstract oracle mapper contains CRUD methods.
+ * The pgsql implementation of HistoryConfigInfoMapper.
  *
  * @author bulain
  **/
-public abstract class AbstractMapperByOracle extends AbstractMapper {
 
-    @Override
-    public String getFunction(String functionName) {
-        return TrustedOracleFunctionEnum.getFunctionByName(functionName);
-    }
+public class HistoryConfigInfoMapperByPgsql extends HistoryConfigInfoMapperByExt implements HistoryConfigInfoMapper {
 
     @Override
     public String getDataSource() {
-        return DataSourceConstant.ORACLE;
+        return DataSourceConstant.PGSQL;
     }
 
 }

@@ -13,27 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.bulain.nacos.plugin.datasource.impl.dmsql;
 
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
+package com.bulain.nacos.plugin.datasource.impl.mssql;
+
+import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoBetaMapper;
 import com.bulain.nacos.plugin.datasource.constants.DataSourceConstant;
-import com.bulain.nacos.plugin.datasource.enums.dmsql.TrustedDmsqlFunctionEnum;
+import com.bulain.nacos.plugin.datasource.impl.ext.ConfigInfoBetaMapperByExt;
 
 /**
- * The abstract dmsql mapper contains CRUD methods.
+ * The mssql implementation of ConfigInfoBetaMapper.
  *
  * @author bulain
  **/
-public abstract class AbstractMapperByDmsql extends AbstractMapper {
 
-    @Override
-    public String getFunction(String functionName) {
-        return TrustedDmsqlFunctionEnum.getFunctionByName(functionName);
-    }
+public class ConfigInfoBetaMapperByMssql extends ConfigInfoBetaMapperByExt implements ConfigInfoBetaMapper {
 
     @Override
     public String getDataSource() {
-        return DataSourceConstant.DMSQL;
+        return DataSourceConstant.MSSQL;
     }
 
 }
