@@ -14,28 +14,28 @@
  * limitations under the License.
  */
 
-package com.bulain.nacos.plugin.datasource.impl.dmsql;
+package com.bulain.nacos.plugin.datasource.impl.oracle;
 
-import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoTagMapper;
+import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoGrayMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
 
 import java.util.Collections;
 
 /**
- * The dmsql implementation of ConfigInfoTagMapper.
+ * The oracle implementation of ConfigInfoGrayMapper.
  *
  * @author bulain
  **/
+public class ConfigInfoGrayMapperByOracle extends AbstractMapperByOracle implements ConfigInfoGrayMapper {
 
-public class ConfigInfoTagMapperByDmsql extends AbstractMapperByDmsql implements ConfigInfoTagMapper {
-    
     @Override
-    public MapperResult findAllConfigInfoTagForDumpAllFetchRows(MapperContext context) {
-        String sql = "SELECT t.id,data_id,group_id,tenant_id,tag_id,app_name,content,md5,gmt_modified "
-                + " FROM ( SELECT id FROM config_info_tag  ORDER BY id  OFFSET " + context.getStartRow()
-                + " ROWS FETCH NEXT " + context.getPageSize() + " ROWS ONLY ) "
-                + " g, config_info_tag t  WHERE g.id = t.id";
+    public MapperResult findAllConfigInfoGrayForDumpAllFetchRows(MapperContext context) {
+        final int startRow = context.getStartRow();
+        final int pageSize = context.getPageSize();
+        String sql = "SELECT id,data_id,group_id,tenant_id,gray_name,gray_rule,app_name,content,md5,gmt_modified "
+                + " FROM config_info_gray ORDER BY id OFFSET " + startRow + " ROWS FETCH NEXT "
+                + pageSize + " ROWS ONLY";
         return new MapperResult(sql, Collections.emptyList());
     }
 

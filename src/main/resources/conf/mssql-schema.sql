@@ -1,5 +1,5 @@
 /*
- * Copyright 1999-2024 Bulain.
+ * Copyright 1999-2025 Bulain.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,31 @@ CREATE INDEX idx_configinfo_2 ON config_info(group_id);
 CREATE INDEX idx_configinfo_3 ON config_info(data_id, group_id);
 
 /******************************************/
+/*   表名称 = config_info_gray  since 2.5.0 */
+/******************************************/
+CREATE TABLE config_info_gray (
+    id bigint unsigned NOT NULL identity,
+    data_id nvarchar(255) NOT NULL,
+    group_id varchar(128) NOT NULL,
+    content ntext NOT NULL,
+    md5 varchar(32),
+    src_user ntext,
+    src_ip varchar(100),
+    gmt_create datetime NOT NULL DEFAULT '2010-05-05 00:00:00',
+    gmt_modified datetime NOT NULL DEFAULT '2010-05-05 00:00:00',
+    app_name nvarchar(128),
+    tenant_id varchar(128) DEFAULT '',
+    gray_name nvarchar(128) NOT NULL,
+    gray_rule ntext NOT NULL,
+    encrypted_data_key varchar(256) NOT NULL DEFAULT '',
+    constraint pk_config_info_gray_1 PRIMARY KEY (id),
+    constraint uk_config_info_gray_1 UNIQUE (data_id,group_id,tenant_id,gray_name)
+);
+
+CREATE INDEX idx_config_info_gray_1 ON config_info_gray(ata_id,gmt_modified);
+CREATE INDEX idx_config_info_gray_2 ON config_info_gray(gmt_modified);
+
+/******************************************/
 /*   数据库全名 = nacos_config   */
 /*   表名称 = his_config_info   */
 /******************************************/
@@ -63,6 +88,9 @@ CREATE TABLE his_config_info (
   src_ip varchar(50),
   op_type char(10),
   encrypted_data_key ntext,
+  publish_type varchar(50) DEFAULT 'formal',
+  gray_name varchar(50),
+  ext_info ntext,
   constraint pk_hisconfiginfo_1 PRIMARY KEY (nid)
 );
 

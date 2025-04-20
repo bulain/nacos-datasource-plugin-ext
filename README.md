@@ -1,6 +1,6 @@
 # 简介
 
-nacos-datasource-plugin-ext 是Nacos适配MSSQL,ORACLE,PGSQL数据源插件。
+nacos-datasource-plugin-ext 是Nacos适配MSSQL,ORACLE,PGSQL,DMSQL,KBSQL数据源插件。
 
 # 快速使用
 
