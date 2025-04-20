@@ -51,7 +51,7 @@ nacos/
 ```yml
 
 #*************** Config Module Related Configurations ***************#
-spring.datasource.platform=pgsql
+spring.sql.init.platform=pgsql
 
 ### Count of DB:
 db.num=1
@@ -97,7 +97,7 @@ nacos/
 ```yml
 
 #*************** Config Module Related Configurations ***************#
-spring.datasource.platform=mssql
+spring.sql.init.platform=mssql
 
 ### Count of DB:
 db.num=1
@@ -143,7 +143,7 @@ nacos/
 ```yml
 
 #*************** Config Module Related Configurations ***************#
-spring.datasource.platform=oracle
+spring.sql.init.platform=oracle
 
 ### Count of DB:
 db.num=1
@@ -190,7 +190,7 @@ nacos/
 ```yml
 
 #*************** Config Module Related Configurations ***************#
-spring.datasource.platform=dmsql
+spring.sql.init.platform=dmsql
 
 ### Count of DB:
 db.num=1
@@ -237,7 +237,7 @@ nacos/
 ```yml
 
 #*************** Config Module Related Configurations ***************#
-spring.datasource.platform=kbsql
+spring.sql.init.platform=kbsql
 
 ### Count of DB:
 db.num=1
