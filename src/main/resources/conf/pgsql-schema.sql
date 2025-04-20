@@ -63,7 +63,7 @@ create table config_info_gray (
 );
 
 create unique index uk_config_info_gray_1 on config_info_gray (data_id,group_id,tenant_id,gray_name);
-create index idx_config_info_gray_1 on config_info_gray(ata_id,gmt_modified);
+create index idx_config_info_gray_1 on config_info_gray(data_id,gmt_modified);
 create index idx_config_info_gray_2 on config_info_gray(gmt_modified);
 
 /******************************************/

@@ -48,7 +48,7 @@ CREATE INDEX idx_configinfo_3 ON config_info(data_id, group_id);
 /*   表名称 = config_info_gray  since 2.5.0 */
 /******************************************/
 CREATE TABLE config_info_gray (
-    id bigint unsigned NOT NULL identity,
+    id bigint NOT NULL identity,
     data_id nvarchar(255) NOT NULL,
     group_id varchar(128) NOT NULL,
     content ntext NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE config_info_gray (
     constraint uk_config_info_gray_1 UNIQUE (data_id,group_id,tenant_id,gray_name)
 );
 
-CREATE INDEX idx_config_info_gray_1 ON config_info_gray(ata_id,gmt_modified);
+CREATE INDEX idx_config_info_gray_1 ON config_info_gray(data_id,gmt_modified);
 CREATE INDEX idx_config_info_gray_2 ON config_info_gray(gmt_modified);
 
 /******************************************/
