@@ -39,7 +39,7 @@ nacos/
 ├── plugins
 │   ├── checker-qual-3.48.3.jar
 │   ├── postgresql-42.7.5.jar
-│   └── nacos-datasource-plugin-ext-2.5.1.jar
+│   └── nacos-datasource-plugin-ext-3.0.0.jar
 └── target
     └── nacos-server.jar
 ```
@@ -87,7 +87,7 @@ cd nacos/
 nacos/
 ├── plugins
 │   ├── mssql-jdbc-12.8.1.jre11.jar
-│   └── nacos-datasource-plugin-ext-2.5.1.jar
+│   └── nacos-datasource-plugin-ext-3.0.0.jar
 └── target
     └── nacos-server.jar
 ```
@@ -133,7 +133,7 @@ cd nacos/
 nacos/
 ├── plugins
 │   ├── ojdbc8-23.5.0.24.07.jar
-│   └── nacos-datasource-plugin-ext-2.5.1.jar
+│   └── nacos-datasource-plugin-ext-3.0.0.jar
 └── target
     └── nacos-server.jar
 ```
@@ -180,7 +180,7 @@ cd nacos/
 nacos/
 ├── plugins
 │   ├── DmJdbcDriver8-8.1.4.93.jar
-│   └── nacos-datasource-plugin-ext-2.5.1.jar
+│   └── nacos-datasource-plugin-ext-3.0.0.jar
 └── target
     └── nacos-server.jar
 ```
@@ -227,7 +227,7 @@ cd nacos/
 nacos/
 ├── plugins
 │   ├── kingbase8-8.6.0.jar
-│   └── nacos-datasource-plugin-ext-2.5.1.jar
+│   └── nacos-datasource-plugin-ext-3.0.0.jar
 └── target
     └── nacos-server.jar
 ```
